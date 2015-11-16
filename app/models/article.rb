@@ -1,9 +1,19 @@
 class Article < ActiveRecord::Base
   #self.table_name = 'main_articles'
   #self.primary_key = "some_field_id"
+  # add optimistic lock
+  # self.lock_optimistically = false # отключение оптимистической блокировки
+
   has_many :comments, dependent: :destroy
   validates :title, presence: true,
             length: {minimum: 5}
+  #default_scope { where lock_version: 0 } # default scope
+  scope :zero_lock_value, -> { where lock_version: 0 }
+
+  # аналог scope определенного выше
+  #ef self.zero_lock_value
+  #  where(lock_version: 0)
+  #end
 
   # Подробная информация по связи has_one
   # :as показывает, что это полиморфная связь.
