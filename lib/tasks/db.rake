@@ -1,4 +1,5 @@
 require 'benchmark'
+
 namespace :db do
   desc "TODO"
   task fake: :environment do

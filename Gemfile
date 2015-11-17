@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'mysql2'
+gem 'rspec'
+gem 'rspec-rails'
