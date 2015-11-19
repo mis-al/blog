@@ -3,6 +3,15 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    render 'test'
+    # respond_to do |format|
+    #   format.html
+    #   format.atom
+    # end
+    puts "------------------------"
+    p request.ip
+    p request.remote_ip
+    puts "------------------------"
   end
 
   def show

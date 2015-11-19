@@ -1,0 +1,11 @@
+<%= image_tag("rails.jpg") %>
+
+<%= date_select("article", "published_on") %>
+<br>
+<%= select_datetime(Time.now + 4.days) %>
+
+<br>
+<%= distance_of_time_in_words(Time.now, Time.now + 15.seconds)  %>
+
+<br>
+<%= select_datetime(Time.now + 4.days) %>
